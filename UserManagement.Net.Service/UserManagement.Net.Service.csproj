@@ -9,6 +9,7 @@
   <ItemGroup>
     <Folder Include="Interfaces\" />
     <Folder Include="Entities\" />
+    <Folder Include="Services\" />
     <Folder Include="UseCases\" />
   </ItemGroup>
 
