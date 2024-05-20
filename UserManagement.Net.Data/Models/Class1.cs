@@ -8,5 +8,6 @@ namespace UserManagement.Net.Data.Models
 {
     internal class Class1
     {
+        public int MyProperty { get; set; }
     }
 }
