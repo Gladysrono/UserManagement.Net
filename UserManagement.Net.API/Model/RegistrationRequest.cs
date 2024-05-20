@@ -1,6 +1,6 @@
 ﻿namespace UserManagement.Net.API.Model
 {
-    public class Registration
+    public class RegistrationRequest
     {
     }
 }
