@@ -9,7 +9,6 @@
   <ItemGroup>
     <Folder Include="Entities\" />
     <Folder Include="Services\" />
-    <Folder Include="UseCases\" />
   </ItemGroup>
 
 </Project>
