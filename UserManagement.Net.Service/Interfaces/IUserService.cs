@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace UserManagement.Net.Service.Interfaces
 {
-    internal interface IUseService
+    internal interface IUserService
     {
     }
 }
