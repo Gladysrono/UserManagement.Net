@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UserManagement.Net.Data.Models
+namespace UserManagement.Net.Service.UseCases
 {
-    internal class Class1
+    internal class VerifyOtp
     {
-        public int MyProperty { get; set; }
     }
 }
