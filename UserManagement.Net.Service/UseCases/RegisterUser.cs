@@ -7,7 +7,7 @@ namespace UserManagement.Net.Service.UseCases
     public class RegisterUser(RegisterUser.IUserRepository userRepository, PasswordHasher passwordHasher) : IRegistrationService
     {
         private readonly IUserRepository _userRepository = userRepository;
-        private readonly PasswordHasher _passwordHasher = passwordHasher;
+        public readonly PasswordHasher _passwordHasher = passwordHasher;
 
         public async Task RegisterUserAsync(string username, string password, string email)
         {

@@ -19,12 +19,16 @@ namespace UserManagement.Net.Data.Repositories
 
         public async Task<User> GetByUsernameAsync(string username)
         {
+#pragma warning disable CS8603 // Possible null reference return.
             return await _context.Users.FirstOrDefaultAsync(u => u.Username == username);
+#pragma warning restore CS8603 // Possible null reference return.
         }
 
         public async Task<User> GetByEmailAsync(string email)
         {
+#pragma warning disable CS8603 // Possible null reference return.
             return await _context.Users.FirstOrDefaultAsync(u => u.Email == email);
+#pragma warning restore CS8603 // Possible null reference return.
         }
 
         public async Task UpdateAsync(User user)

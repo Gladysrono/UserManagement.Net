@@ -7,14 +7,9 @@ namespace UserManagement.Net.API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class AuthController : ControllerBase
+    public class AuthController(IUserService userService) : ControllerBase
     {
-        private readonly IUserService _userService;
-
-        public AuthController(IUserService userService)
-        {
-            _userService = userService;
-        }
+        private readonly IUserService _userService = userService;
 
         [HttpPost("register")]
         public async Task<IActionResult> Register([FromBody] RegisterRequest request)
@@ -24,7 +19,9 @@ namespace UserManagement.Net.API.Controllers
                 return BadRequest("Invalid registration request");
             }
 
-            await _userService.RegisterUserAsync(request.Username, request.Password, request.Email);
+#pragma warning disable CS8604 // Possible null reference argument.
+            await _userService.RegisterUserAsync(request.Username, password: request.Password, request.Email);
+#pragma warning restore CS8604 // Possible null reference argument.
             return Ok(new { message = "User registered successfully" });
         }
 

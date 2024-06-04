@@ -10,6 +10,6 @@ namespace UserManagement.Net.Service.Interfaces
         Task<bool> ResetPasswordAsync(string email, string otp, string newPassword);
         Task ResendOtpAsync(string email);
         Task<string> LoginUserAsync(string username, string password);
-        T
+        
     }
 }
