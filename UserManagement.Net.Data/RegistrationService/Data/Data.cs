@@ -1,5 +1,8 @@
-﻿
-namespace RegistrationService.Data
+﻿using Microsoft.EntityFrameworkCore;
+using UserManagement.Net.Service.Interfaces;
+using UserManagement.Net.Data; // Add this using directive
+
+namespace UserManagement.Net.Service.Services
 {
     internal class Data
     {

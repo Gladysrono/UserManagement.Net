@@ -1,5 +1,4 @@
 ﻿using RegistrationService.Service.Entities;
-using System.Threading.Tasks;
 
 namespace UserManagement.Net.Data.Interfaces
 {

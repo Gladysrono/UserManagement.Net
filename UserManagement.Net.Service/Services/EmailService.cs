@@ -24,5 +24,20 @@ namespace UserManagement.Net.Service.Services
 
             await smtp.SendMailAsync(message);
         }
+
+        Task IEmailService.SendForgotPasswordEmailAsync(string email, object otp)
+        {
+            throw new NotImplementedException();
+        }
+
+        Task IEmailService.SendOtpAsync(string email, string otp)
+        {
+            throw new NotImplementedException();
+        }
+
+        Task IEmailService.SendOtpEmailAsync(string email, object otp)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

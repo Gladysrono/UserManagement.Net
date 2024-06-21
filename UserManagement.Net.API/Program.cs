@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
+using RegistrationService.Data;
 
 namespace UserManagement.Net.API
 {
