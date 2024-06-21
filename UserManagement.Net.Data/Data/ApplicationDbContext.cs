@@ -9,7 +9,7 @@ namespace UserManagement.Net.Data
         {
         }
 
-        public DbSet<User> Users { get; set; }
+        public DbSet<User> Users { get; set; } 
         public DbSet<Otp> Otps { get; set; }
     }
 

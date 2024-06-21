@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RegistrationService.Service.Entities;
+using System;
 using System.Threading.Tasks;
 using UserManagement.Net.Service.Services;
 
@@ -21,6 +22,8 @@ namespace UserManagement.Net.Service.UseCases
         public interface IUserRepository
         {
             Task CreateUserAsync(string username, string hashedPassword, string email);
+            Task GetByEmailAsync(string email);
+            Task<User> GetByUsernameAsync(string username);
         }
     }
 
