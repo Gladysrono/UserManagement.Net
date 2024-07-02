@@ -11,9 +11,14 @@ using UserManagement.Net.Service;
 
 namespace UserManagement.Net.API
 {
-    public class Startup(IConfiguration configuration)
+    public class Startup
     {
-        public IConfiguration Configuration { get; } = configuration;
+        public IConfiguration Configuration { get; }
+
+        public Startup(IConfiguration configuration)
+        {
+            Configuration = configuration;
+        }
 
         public void ConfigureServices(IServiceCollection services)
         {
@@ -47,7 +52,7 @@ namespace UserManagement.Net.API
             });
 
             // Register application services
-            services.AddScoped<IUserService, IUserService>(); // Correctly register the UserService implementation
+            services.AddScoped<IUserService, UserService>(); // Correctly register the UserService implementation
 
             // Add other necessary services
         }
