@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace UserManagement.Net.Service.Services
+﻿namespace UserManagement.Net.Service.Services
 {
-    internal class UserService
+    public class UserService
     {
     }
 }
