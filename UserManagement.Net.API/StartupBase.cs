@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using RegistrationService.Data;
 using UserManagement.Net.Data;
 
 namespace UserManagement.Net.API
@@ -18,7 +19,8 @@ namespace UserManagement.Net.API
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddControllers();
-            //services.AddInfrastructureServices(); // Extension method for adding infrastructure services
+           
+            services.AddInfrastructureServices(); // Extension method for adding infrastructure services
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
