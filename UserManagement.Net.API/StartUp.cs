@@ -1,8 +1,13 @@
-﻿using UserManagement.Net.Service.Services;
+﻿using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using UserManagement.Net.Data;
 using UserManagement.Net.Service.Interfaces;
+using UserManagement.Net.Service.Services;
 
 namespace UserManagement.Net.API
 {
@@ -47,7 +52,7 @@ namespace UserManagement.Net.API
             });
 
             // Register application services
-            IServiceCollection serviceCollection = services.AddScoped<IUserService, UserService>(); // Correctly register the UserService implementation
+            services.AddScoped<IUserService, UserService>();
 
             // Add other necessary services
         }
