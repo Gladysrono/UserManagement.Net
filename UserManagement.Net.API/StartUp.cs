@@ -15,7 +15,7 @@ namespace UserManagement.Net.API
             Configuration = configuration;
         }
 
-        public void ConfigureServices(IServiceCollection services)
+        public void ConfigureServices(IServiceCollection services, IServiceCollection serviceCollection)
         {
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"),
@@ -45,9 +45,6 @@ namespace UserManagement.Net.API
                     }
                 });
             });
-
-            // Register application services
-            IServiceCollection serviceCollection = services.AddScoped<IUserService, UserService>(); // Correctly register the UserService implementation
 
             // Add other necessary services
         }
