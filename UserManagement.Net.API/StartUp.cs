@@ -1,8 +1,13 @@
-﻿using UserManagement.Net.Service.Services;
+﻿using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using UserManagement.Net.Data;
 using UserManagement.Net.Service.Interfaces;
+using UserManagement.Net.Service.Services;
 
 namespace UserManagement.Net.API
 {
@@ -15,7 +20,7 @@ namespace UserManagement.Net.API
             Configuration = configuration;
         }
 
-        public void ConfigureServices(IServiceCollection services, IServiceCollection serviceCollection)
+        public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"),
@@ -45,6 +50,9 @@ namespace UserManagement.Net.API
                     }
                 });
             });
+
+            // Register application services
+            services.AddScoped<IUserService, UserService>();
 
             // Add other necessary services
         }
