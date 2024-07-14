@@ -2,6 +2,7 @@
 
 namespace UserManagement.Net.Service.Services
 {
+    //implementation of methods found in iUserService Interface
     public class UserService : IUserService
     {
         public Task<string> LoginUserAsync(string username, string password)
