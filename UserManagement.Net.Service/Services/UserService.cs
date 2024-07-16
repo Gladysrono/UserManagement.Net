@@ -33,7 +33,7 @@ namespace UserManagement.Net.Service.Services
             // Add logic to send an email with a reset link or OTP
             return Task.CompletedTask;
         }
-
+        //this method has one reference
         public Task<bool> ResetPasswordAsync(string email, string otp, string newPassword)
         {
             // Example implementation for resetting user password
