@@ -64,18 +64,22 @@ namespace UserManagement.Net.API
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseSwagger();
-            app.UseSwaggerUI(c =>
-            {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "User Management API V1");
-                c.RoutePrefix = string.Empty;
-            });
+            app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+            });
+
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "User Management API V1");
+                c.RoutePrefix = string.Empty; // Serve Swagger UI at the app's root
             });
         }
     }
