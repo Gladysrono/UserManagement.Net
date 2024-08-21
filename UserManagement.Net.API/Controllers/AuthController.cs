@@ -19,9 +19,9 @@ namespace UserManagement.Net.API.Controllers
                 return BadRequest("Invalid registration request");
             }
 
-#pragma warning disable CS8604 // Possible null reference argument.
+
             await _userService.RegisterUserAsync(request.Username, password: request.Password, request.Email);
-#pragma warning restore CS8604 // Possible null reference argument.
+// Possible null reference argument.
             return Ok(new { message = "User registered successfully" });
         }
 
